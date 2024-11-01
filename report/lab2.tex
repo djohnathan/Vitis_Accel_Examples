@@ -9,9 +9,9 @@
 \date{\today}
 
 \begin{document}
-\maketitle
+  \maketitle
 
-\section{Baseline Code}
-\subsection{fir11\_host.cpp}
-This code connects to the FPGA device and installs the kernel. It then sets up an output buffer, and reads an input file 'input.dat'. It goes over each input \texttt{data\_t}, presumably to be defined in 'fir11\_kernel.h' and passes it to the device. After that it waits for the device to finish then takes the output through the binary output and sends the data to the output file 'out.dat'. After it finishes through the input it compared the output with the contents of 'out.gold.fir11.dat'.
+    \section{Baseline Code}
+      \subsection{fir11\_host.cpp}
+      This code connects to the FPGA device and installs the kernel. It then sets up an output buffer, and reads an input file 'input.dat'. It goes over each input \texttt{data\_t}, defined in 'fir11\_kernel.h' as \texttt{int}, and passes it to the device. After that it waits for the device to finish then takes the output through the binary output and sends the data to the output file 'out.dat'. After it finishes through the input it compared the output with the contents of 'out.gold.fir11.dat'.
 \end{document}
