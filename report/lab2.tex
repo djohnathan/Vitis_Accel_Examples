@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{float}
 
 \title{CSE565M - Lab 2}
 \author{Johnathan Dunker}
@@ -62,13 +63,13 @@
         \end{lstlisting}
       \pagebreak[3]
       \subsection{Emulation}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{baseline_sw_emu.png}
         \caption{Software Emulation Output}
         \label{fig:bl_sw_emu_out}
       \end{figure}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{baseline_hw_emu_2.png}
         \caption{Hardware Emulation Output}
@@ -107,16 +108,52 @@
       \end{lstlisting}
       \pagebreak[3]
       \subsection{Emulation}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{opt_sw_emu.png}
         \caption{Software Emulation Output}
         \label{fig:opt_sw_emu_out}
       \end{figure}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{opt_hw_emu.png}
         \caption{Hardware Emulation Output}
         \label{fig:opt_hw_emu_out}
+      \end{figure}
+    \section{Vitis GUI}
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{vitis_c_sim_2.png}
+        \caption{Vitis C Simulation}
+        \label{fig:vitis_c_sim}
+      \end{figure}
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{vitis_c_syn.png}
+        \caption{Vitis C Synthesis}
+        \label{fig:vitis_c_syn}
+      \end{figure}
+
+      The most interesting report I found in the vitis GUI was the the block schedule. It showed
+      when each logical portion of the kernel would execute. Personally, I found it humorous that
+      communication with the FPGA was 8x longer than the kernel itself.
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{vitis_sched_1.png}
+        \hfill
+        \includegraphics[width=0.8\textwidth]{vitis_sched_2.png}
+        \caption{Logic Block Schedule}
+        \label{fig:vitis_sched_2}
+      \end{figure}
+
+      I also found the Quality of Results report interesting. It estimated the timing of the kernel along
+      with describing the pipeline's size latency, initiation interval and the bram and dsp usage.
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{vitis_QoR.png}
+        \caption{Estimated Quality of Results Report}
+        \label{fig:vitis_QoR}
       \end{figure}
 \end{document}
