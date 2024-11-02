@@ -8,7 +8,7 @@
 \usepackage{float}
 
 \title{CSE565M - Lab 2}
-\author{Johnathan Dunker}
+\author{Johnathan Dunker and Eric Neblock}
 \date{\today}
 
 \lstdefinestyle{HLSstyle}{
@@ -28,7 +28,7 @@
 }
 
 \begin{document}
-  \maketitle
+\maketitle
 
     \section{Baseline Code}
       \subsection{fir11\_host.cpp}
@@ -134,8 +134,8 @@
         \label{fig:vitis_c_syn}
       \end{figure}
 
-      The most interesting report I found in the vitis GUI was the the block schedule. It showed
-      when each logical portion of the kernel would execute. Personally, I found it humorous that
+      The most interesting report we found in the vitis GUI was the the block schedule. It showed
+      when each logical portion of the kernel would execute. Johnathon found it humorous that
       communication with the FPGA was 8x longer than the kernel itself.
 
       \begin{figure}[H]
@@ -147,7 +147,7 @@
         \label{fig:vitis_sched_2}
       \end{figure}
 
-      I also found the Quality of Results report interesting. It estimated the timing of the kernel along
+      We also found the Quality of Results report interesting. It estimated the timing of the kernel along
       with describing the pipeline's size latency, initiation interval and the bram and dsp usage.
 
       \begin{figure}[H]
@@ -155,5 +155,19 @@
         \includegraphics[width=0.8\textwidth]{vitis_QoR.png}
         \caption{Estimated Quality of Results Report}
         \label{fig:vitis_QoR}
+      \end{figure}
+    \section{Running on the Alveo U280}
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{hardware_run.png}
+        \caption{Verification of the Hardware Run}
+        \label{fig:hw_run}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{timeline_trace.png}
+        \caption{Timeline Trace Analysis}
+        \label{fig:timeline}
       \end{figure}
 \end{document}
